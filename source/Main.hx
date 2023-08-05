@@ -83,7 +83,7 @@ class Main extends Sprite
 	
 		ClientPrefs.loadDefaultKeys();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
-
+		
 		#if !mobile
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
@@ -92,6 +92,8 @@ class Main extends Sprite
 		if(fpsVar != null) {
 			fpsVar.visible = ClientPrefs.showFPS;
 		}
+		fpsVar.scaleY = 0.87;
+		fpsVar.scaleX = 0.87;
 		#end
 
 		#if html5
