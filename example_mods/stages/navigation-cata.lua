@@ -12,7 +12,7 @@ function onCreate()
 	makeAnimatedLuaSprite('GFBG2', 'GF_assets2',  1200, 575);
     luaSpriteAddAnimationByPrefix('GFBG2', 'idle', 'GF dead0000', 24, true);
 	scaleObject('GFBG2', 1, 1);
-	setObjectOrder('GFBG2', 2);
+	setObjectOrder('GFBG2', 1);
     luaSpritePlayAnimation('GFBG2', 'idle', true);
 	
 	makeAnimatedLuaSprite('whaud','lighttttt', -400, 50);
@@ -41,6 +41,8 @@ end
 
 
 function onCreatePost()
+	setObjectOrder('gfGroup', getObjectOrder('GFBG2') + 1);
+	setObjectOrder('dadGroup', getObjectOrder('gfGroup') + 1);
 	if not isStoryMode then
     setProperty("BotplayTxt.visible",false)
 
